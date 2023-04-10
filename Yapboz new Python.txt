@@ -1,0 +1,57 @@
+import random
+
+# Oyun tahtası boyutları
+tahta_satir = 5
+tahta_sutun = 5
+
+# Yapboz tahtası oluşturma
+def yapboz_olustur(tahta_satir, tahta_sutun):
+    tahta = []
+    for i in range(tahta_satir):
+        satir = []
+        for j in range(tahta_sutun):
+            satir.append(0)
+        tahta.append(satir)
+    return tahta
+
+# Yapboz tahtasını yazdırma
+def yapboz_yazdir(tahta):
+    for satir in tahta:
+        print(satir)
+
+# Yapboz tahtasına parça ekleme
+def parca_ekle(tahta, parca):
+    tahta[random.randint(0, tahta_satir-1)][random.randint(0, tahta_sutun-1)] = parca
+    return tahta
+
+# Oyunun ana döngüsü
+def oyun():
+    print("Seviyeli Yapboz Oyunu\n")
+    tahta = yapboz_olustur(tahta_satir, tahta_sutun)
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "G")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "A")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "M")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "E")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "O")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "V")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "E")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "R")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "C")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "L")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "S")
+    yapboz_yazdir(tahta)
+    parca_ekle(tahta, "Y")
+    yapboz_yazdir(tahta)
+    
+oyun()
